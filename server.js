@@ -5,8 +5,10 @@ require('dotenv').config();
 // Initialise Fastify with logging enabled
 const app = Fastify({ logger: true });
 
-// Register CORS so the frontend can communicate with this API later
-app.register(require('cors'), { origin: '*' });
+app.register(require('@fastify/cors'), { 
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
+});
 
 // Connect to PostgreSQL using the securely injected DATABASE_URL
 const pool = new Pool({
