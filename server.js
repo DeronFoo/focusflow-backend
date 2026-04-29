@@ -11,7 +11,7 @@ app.register(require('cors'), { origin: '*' });
 app.get('/api/status', async (request, reply) => {
     return { 
         service: 'FocusFlow API', 
-        status: 'operational - CI/CD Active!',
+        status: 'operational - CI/CD Active!!',
         environment: process.env.NODE_ENV || 'development'
     };
 });
